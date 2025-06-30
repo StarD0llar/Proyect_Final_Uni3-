@@ -75,6 +75,7 @@ public class Menus {
         System.out.println("'-=-=-=-=-=-=-=-=-=-=-=-=-=-'");
         System.out.println("| Elija una opcion [1-4]   |");
         System.out.print("| Opcion: ");
+        System.out.println("");
         
     }
     public static void carros(){
