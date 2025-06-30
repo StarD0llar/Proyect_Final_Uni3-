@@ -121,7 +121,7 @@ public class Operaciones {
         System.out.println("");
         System.out.println("> No es una opcion");
         System.out.println("");
-        System.out.println("Hola mundo");
+        
     }
     
     public static void main(String[] args) {
