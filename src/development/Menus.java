@@ -6,17 +6,16 @@ public class Menus {
             System.out.println("|       SHAYANDERO TOURS      |");
             System.out.println("+-----------------------------+");
             System.out.println("| 1. Paquetes turisticos      |");
-            System.out.println("| 2. Tours y Destinos         |");
-            System.out.println("| 3. Ofertas Especiales       |");
-            System.out.println("| 4. Carros Disponibles       |");
-            System.out.println("| 5. Pasajes Disponibles      |");
+            System.out.println("| 2. Ofertas Especiales       |");
+            System.out.println("| 3. Carros Disponibles       |");
+            System.out.println("| 4. Pasajes Disponibles      |");
             System.out.println("+-----------------------------+");
-            System.out.println("| 6. Gestion                  |");
-            System.out.println("| 7. Reservas                 |");
+            System.out.println("| 5. Gestion                  |");
+            System.out.println("| 6. Reservas                 |");
             System.out.println("+-----------------------------+");
-            System.out.println("| 8. Cerrar Sesion            |");
+            System.out.println("| 7. Cerrar Sesion            |");
             System.out.println("+-----------------------------+");
-            System.out.println("|   Elija una opcion [1-8]    | ");
+            System.out.println("|   Elija una opcion [1-7]    | ");
             System.out.print("|   Opcion: ");
             
     }
@@ -49,20 +48,7 @@ public class Menus {
         System.out.print("| Opcion: ");
         
     }
-    public static void tours(){
-        System.out.println();
-        System.out.println(".-=-=-=-=-=-=-=-=-=-=-=-=-=-.");
-        System.out.println("|           TOURS          |");
-        System.out.println(":---------------------------:");
-        System.out.println("| 1. Crear                 |");
-        System.out.println("| 2. Actualizar            |");
-        System.out.println("| 3. Eliminar              |");
-        System.out.println("| 4. Regresar              |");
-        System.out.println("'-=-=-=-=-=-=-=-=-=-=-=-=-=-'");
-        System.out.println("| Elija una opcion [1-4]   |");
-        System.out.print("| Opcion: ");
-        
-    }
+
     public static void ofertas(){
         System.out.println();
         System.out.println(".-=-=-=-=-=-=-=-=-=-=-=-=-=-.");
