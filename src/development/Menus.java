@@ -6,16 +6,14 @@ public class Menus {
             System.out.println("|       SHAYANDERO TOURS      |");
             System.out.println("+-----------------------------+");
             System.out.println("| 1. Paquetes turisticos      |");
-            System.out.println("| 2. Ofertas Especiales       |");
-            System.out.println("| 3. Carros Disponibles       |");
-            System.out.println("| 4. Pasajes Disponibles      |");
+            System.out.println("| 2. Carros Disponibles       |");
             System.out.println("+-----------------------------+");
-            System.out.println("| 5. Gestion                  |");
-            System.out.println("| 6. Reservas                 |");
+            System.out.println("| 3. Gestion                  |");
+            System.out.println("| 4. Reservas                 |");
             System.out.println("+-----------------------------+");
-            System.out.println("| 7. Cerrar Sesion            |");
+            System.out.println("| 5. Cerrar Sesion            |");
             System.out.println("+-----------------------------+");
-            System.out.println("|   Elija una opcion [1-7]    | ");
+            System.out.println("|   Elija una opcion [1-5]    | ");
             System.out.print("|   Opcion: ");
             
     }
@@ -25,13 +23,10 @@ public class Menus {
         System.out.println("|   Gestion Del Sistema    |");
         System.out.println(":---------------------------:");
         System.out.println("| 1. Paquetes              |");
-        System.out.println("| 2. Tours                 |");
-        System.out.println("| 3. Ofertas               |");
-        System.out.println("| 4. Carros                |");
-        System.out.println("| 5. Pasajes               |");
-        System.out.println("| 6. Regresar              |");
+        System.out.println("| 2. Carros                |");
+        System.out.println("| 3. Regresar              |");
         System.out.println("'-=-=-=-=-=-=-=-=-=-=-=-=-=-'");
-        System.out.println("| Elija una opcion [1-6]   |");
+        System.out.println("| Elija una opcion [1-3]   |");
         System.out.print("| Opcion: ");
     }
     public static void paquetes(){
@@ -52,11 +47,11 @@ public class Menus {
     public static void ofertas(){
         System.out.println();
         System.out.println(".-=-=-=-=-=-=-=-=-=-=-=-=-=-.");
-        System.out.println("|          OFERTAS         |");
+        System.out.println("|            TIPO          |");
         System.out.println(":---------------------------:");
-        System.out.println("| 1. Crear                 |");
-        System.out.println("| 2. Actualizar            |");
-        System.out.println("| 3. Eliminar              |");
+        System.out.println("| 1. Economico             |");
+        System.out.println("| 2. Premiun               |");
+        System.out.println("| 3. Vip                   |");
         System.out.println("| 4. Regresar              |");
         System.out.println("'-=-=-=-=-=-=-=-=-=-=-=-=-=-'");
         System.out.println("| Elija una opcion [1-4]   |");

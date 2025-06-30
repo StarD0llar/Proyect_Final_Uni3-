@@ -19,27 +19,21 @@ public class Operaciones {
                     ver_paquetes();
                     break;
                 case 2:
-                    ver_ofertas();
-                    break;
-                case 3:
                     ver_carros();
                     break;
-                case 4:
-                    ver_pasajes();
-                    break;
-                case 5:
+                case 3:
                     gestion();
                     break;
-                case 6:
+                case 4:
                     reservas();
                     break;
-                case 7:
+                case 5:
                     cerrar_sesion();
                     break;
                 default:
                     error();
             }
-        } while (op!=7);
+        } while (op!=5);
     }
     
     public static void crear_paquetes(){
@@ -55,19 +49,6 @@ public class Operaciones {
         
     }
     
-    public static void crear_ofertas(){
-        
-    }
-    public static void ver_ofertas(){
-        
-    }
-    public static void actualizar_ofertas(){
-        
-    }
-    public static void eliminar_ofertas(){
-        
-    }
-    
     public static void crear_carros(){
         
     }
@@ -80,20 +61,7 @@ public class Operaciones {
     public static void eliminar_carros(){
         
     }
-    
-    public static void crear_pasajes(){
-        
-    }
-    public static void ver_pasajes(){
-        
-    }
-    public static void actualizar_pasajes(){
-        
-    }
-    public static void eliminar_pasajes(){
-        
-    }
-    
+
     public static void crear_reservas(){
         
     }
