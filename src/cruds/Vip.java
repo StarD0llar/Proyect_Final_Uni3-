@@ -1,10 +1,10 @@
 package cruds;
 
-public class Economic {
+public class Vip {
     String Nombre,Descripcion,Duracion;
     int Precio;
 
-    public Economic(String Nombre, String Descripcion, String Duracion, int Precio) {
+    public Vip(String Nombre, String Descripcion, String Duracion, int Precio) {
         this.Nombre = Nombre;
         this.Descripcion = Descripcion;
         this.Duracion = Duracion;
@@ -30,15 +30,17 @@ public class Economic {
 @Override
 public String toString() {
     return String.format(
-            "---------------- PAQUETE ECONÓMICO ----------------%n"
+            "---------------- PAQUETE VIP ----------------------%n"
           + "| Nombre: %-40s |%n"
-          + "| Descripción: %-37s |%n"
-          + "| Duración: %-38s |%n"
+          + "| Descripcion: %-37s |%n"
+          + "| Duracion: %-38s |%n"
           + "| Precio: $%-37.2f |%n"
           + "| Incluye:                                      |%n"
-          + "|   - Transporte                                |%n"
+          + "|   - Transporte 24/7                           |%n"
           + "|   - Mapa                                      |%n"
-          + "|   - Alimentación                              |%n"
+          + "|   - Hospedaje (5 Estrellas O Suites)          |%n"
+          + "|   - Alimentacion (Chef Privado)               |%n"
+          + "|   - Kit Viajero + Asistencia personalizada    |%n"
           + "--------------------------------------------------",
             getNombre(), getDescripcion(), getDuracion(), getPrecio()
             

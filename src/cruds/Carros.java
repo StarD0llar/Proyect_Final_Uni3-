@@ -19,7 +19,9 @@ public class Carros {
 
     @Override
     public String toString() {
-        return "Carros{" + "Modelo =" + Modelo + ", Capacidad=" + Capacidad + '}';
-        
+        return String.format(
+                " Modelo:%-10s | Capacidad:%-5s",
+                Modelo, Capacidad
+        );
     }
 }
