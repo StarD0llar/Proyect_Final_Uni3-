@@ -44,20 +44,7 @@ public class Menus {
         
     }
 
-    public static void ofertas(){
-        System.out.println();
-        System.out.println(".-=-=-=-=-=-=-=-=-=-=-=-=-=-.");
-        System.out.println("|            TIPO          |");
-        System.out.println(":---------------------------:");
-        System.out.println("| 1. Economico             |");
-        System.out.println("| 2. Premiun               |");
-        System.out.println("| 3. Vip                   |");
-        System.out.println("| 4. Regresar              |");
-        System.out.println("'-=-=-=-=-=-=-=-=-=-=-=-=-=-'");
-        System.out.println("| Elija una opcion [1-4]   |");
-        System.out.print("| Opcion: ");
-        
-    }
+
     public static void carros(){
         System.out.println();
         System.out.println(".-=-=-=-=-=-=-=-=-=-=-=-=-=-.");
@@ -72,20 +59,7 @@ public class Menus {
         System.out.print("| Opcion: ");
         
     }
-    public static void pasajes(){
-        System.out.println();
-        System.out.println(".-=-=-=-=-=-=-=-=-=-=-=-=-=-.");
-        System.out.println("|         PASAJES          |");
-        System.out.println(":---------------------------:");
-        System.out.println("| 1. Crear                 |");
-        System.out.println("| 2. Actualizar            |");
-        System.out.println("| 3. Eliminar              |");
-        System.out.println("| 4. Regresar              |");
-        System.out.println("'-=-=-=-=-=-=-=-=-=-=-=-=-=-'");
-        System.out.println("| Elija una opcion [1-4]   |");
-        System.out.print("| Opcion: ");
-        
-    }
+
     public static void reservas() {
         System.out.println();
         System.out.println(".-=-=-=-=-=-=-=-=-=-=-=-=-=-.");

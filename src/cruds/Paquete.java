@@ -1,15 +1,20 @@
 package cruds;
 
 public class Paquete {
-    String Nombre,Descripcion,Duracion,Categoria;
-    int Precio;
+    String Num,Nombre,Descripcion,Duracion,Categoria;
+    double Precio;
 
-    public Paquete(String Nombre, String Descripcion, String Duracion, String Categoria, int Precio) {
+    public Paquete(String Num,String Nombre, String Descripcion, String Duracion, String Categoria, double Precio) {
+        this.Num = Num;
         this.Nombre = Nombre;
         this.Descripcion = Descripcion;
         this.Duracion = Duracion;
         this.Categoria = Categoria;
         this.Precio = Precio;
+    }
+
+    public String getNum() {
+        return Num;
     }
 
     public String getNombre() {
@@ -28,49 +33,19 @@ public class Paquete {
         return Categoria;
     }
 
-    public int getPrecio() {
+    public double getPrecio() {
         return Precio;
     }
 
 @Override
 public String toString() {
-    String incluyeContent;
-    
-    switch(getCategoria().toLowerCase()) {
-        case "economico":
-            incluyeContent = "|   - Transporte básico             |%n"
-                          + "|   - Mapa turístico                |%n"
-                          + "|   - Desayuno continental          |";
-            break;
-            
-        case "vip":
-            incluyeContent = "|   - Transporte privado           |%n"
-                          + "|   - Guía turístico personal      |%n"
-                          + "|   - Cena gourmet                 |%n"
-                          + "|   - Acceso a lounges exclusivos  |";
-            break;
-            
-        case "premium":
-            incluyeContent = "|   - Limusina con chofer         |%n"
-                          + "|   - Tour personalizado          |%n"
-                          + "|   - Chef privado                |%n"
-                          + "|   - Spa y masajes incluidos     |%n"
-                          + "|   - Asistente personal 24/7    |";
-            break;
-            
-        default:
-            incluyeContent = "|   - Servicios estándar          |";
-    }
-
     return String.format(
             "----------------------- PAQUETE -------------------%n"
           + "| Nombre: %-40s |%n"
           + "| Descripcion: %-37s |%n"
           + "| Duracion: %-38s |%n"
-          + "| Precio: $%-37.2f |%n"
           + "| Categoria: %-36s |%n"
-          + "| Incluye:                                      |%n"
-          + incluyeContent + "%n"
+          + "| Precio: $%-37.2f |%n"                    
           + "--------------------------------------------------",
             getNombre(), 
             getDescripcion(), 
