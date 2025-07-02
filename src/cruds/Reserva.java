@@ -42,7 +42,7 @@ public String toString() {
         "| DURACION: %-48s |%n" +
         "| PERSONAS: %-47d |%n" +
         "+------------------------------------------------------------+%n" +
-        "%s" + 
+        getDetallesCategoria(categoria) +
         "+------------------------------------------------------------+%n" +
         "| VEHICULO: %-48s |%n" +
         "| MODELO: %-50s |%n" +
@@ -50,7 +50,7 @@ public String toString() {
         "+------------------------------------------------------------+%n" +
         "| TOTAL: $%-49.2f |%n" +
         "+------------------------------------------------------------+%n" +
-        "%s" + 
+        getNotasCategoria(categoria) +   
         "|                                                          |%n" +
         "| Fecha emisión: %-42s |%n" +
         "+------------------------------------------------------------+%n",
@@ -63,12 +63,10 @@ public String toString() {
         paquete.getCategoria(),
         paquete.getDuracion(),
         personas,
-        getDetallesCategoria(categoria),
         carro.getNum(),
         carro.getModelo(),
         carro.getCapacidad(),
         total,
-        getNotasCategoria(categoria),
         fechaEmision  
     );
 }
@@ -76,55 +74,46 @@ public String toString() {
 private String getDetallesCategoria(String categoria) {
     switch(categoria) {
         case "premium":
-            return String.format(
-                "| INCLUYE:%-48s |%n" +
-                "|   - Transporte ejecutivo con chofer%-25s |%n" +
-                "|   - Hospedaje 4 estrellas%-34s |%n" +
-                "|   - Alimentacion buffet premium%-27s |%n",
-                "", "", "");
+            return 
+                "| INCLUYE:                                                   |%n" +
+                "|   - Transporte ejecutivo con chofer                        |%n" +
+                "|   - Hospedaje 4 estrellas                                  |%n" +
+                "|   - Alimentacion buffet premium                            |%n";
             
         case "vip":
-            return String.format(
-                "| INCLUYE:%-48s |%n" +
-                "|   - Transporte privado 24/7%-30s |%n" +
-                "|   - Suite en hotel 5*%-37s |%n" +
-                "|   - Chef personalizado%-34s |%n",
-                "", "", "");
+            return 
+                "| INCLUYE:                                                   |%n" +
+                "|   - Transporte privado 24/7                                |%n" +
+                "|   - Suite en hotel 5*                                      |%n" +
+                "|   - Chef personalizado                                    |%n";
+            
         case "economico":
-            return String.format(
-                "| INCLUYE:%-48s |%n" +
-                "|   - Transporte compartido%-33s |%n" +
-                "|   - Alojamiento basico%-36s |%n" +
-                "|   - Desayuno continental%-32s |%n",
-                "", "", "");
+            return 
+                "| INCLUYE:                                                   |%n" +
+                "|   - Transporte compartido                                  |%n" +
+                "|   - Alojamiento basico                                    |%n" +
+                "|   - Desayuno continental                                  |%n";
             
         default: 
-            return String.format(
-                "| INCLUYE:%-48s |%n" +
-                "|   - Transporte compartido%-33s |%n" +
-                "|   - Alojamiento basico%-36s |%n" +
-                "|   - Desayuno continental%-32s |%n",
-                "", "", "");
+            return 
+                "| INCLUYE:                                                   |%n" +
+                "|   - Transporte compartido                                  |%n" +
+                "|   - Alojamiento basico                                    |%n" +
+                "|   - Desayuno continental                                  |%n";
     }
 }
 
 private String getNotasCategoria(String categoria) {
     switch(categoria) {
         case "premium":
-            return "| NOTA: Presentar tarjeta Premium al check-in%-23s |%n";
+            return "| NOTA: Presentar tarjeta Premium al check-in                |%n";
         case "vip":
-            return "| NOTA: Acceso exclusivo con identificacion VIP%-20s |%n";
+            return "| NOTA: Acceso exclusivo con identificacion VIP              |%n";
         case "economico":
-            return "| NOTA: Presentar DNI y comprobante de pago%-21s |%n";
+            return "| NOTA: Presentar DNI y comprobante de pago                 |%n";
         default:
-            return "| NOTA: Presentar DNI y comprobante de pago%-21s |%n";
+            return "| NOTA: Presentar DNI y comprobante de pago                 |%n";
     }
 }
-
-
-
-
-
-
 
 }
