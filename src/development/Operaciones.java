@@ -62,7 +62,7 @@ public class Operaciones {
             System.out.print(" Categoria (Economico,Premiun,Vip) \n");
             System.out.print(" Categoria: ");
             String Categoria = leer.cadena();
-            System.out.print("Duracion: ");
+            System.out.print(" Duracion: ");
             String Duracion = leer.cadena();
             System.out.print(" Costo: ");
             double Precio = leer.decimal();
@@ -83,35 +83,41 @@ public class Operaciones {
         }
     }
     public static void actualizar_paquetes(){
-        System.out.print("Ingrese el codigo de paquete a actualizar: ");
-        String cod = leer.cadena();
-        for (int i = 0; i < paqueteIndex; i++) {
-            if (paquete[i].getNum().equals(cod)) {
-                System.out.println("=======================");
-                System.out.print("New Destino: ");
-                String Nombre = leer.cadena();
-                System.out.print("New Descripcion: ");
-                String Descripcion = leer.cadena();
-                System.out.print(" Categoria (Economico,Premiun,Vip) \n");
-                System.out.print("New Categoria: ");
-                String Categoria = leer.cadena();
-                System.out.print("New Duracion: ");
-                String Duracion = leer.cadena();
-                System.out.print("New Costo: ");
-                double Precio = leer.decimal();
-                System.out.println("=======================");
-                paquete[i] = new Paquete(cod, Nombre, Descripcion, Duracion, Categoria, Precio);
-                System.out.println(">> Paquete actualizado correctamente <<");
-                return;
+        if (paqueteIndex>0) {
+            System.out.print("Ingrese el codigo de paquete a actualizar: ");
+            String cod = leer.cadena();
+            for (int i = 0; i < paqueteIndex; i++) {
+                if (paquete[i].getNum().equals(cod)) {
+                    System.out.println("=======================");
+                    System.out.print(" New Destino: ");
+                    String Nombre = leer.cadena();
+                    System.out.print(" New Descripcion: ");
+                    String Descripcion = leer.cadena();
+                    System.out.print(" Categoria (Economico,Premiun,Vip) \n");
+                    System.out.print(" New Categoria: ");
+                    String Categoria = leer.cadena();
+                    System.out.print(" New Duracion: ");
+                    String Duracion = leer.cadena();
+                    System.out.print(" New Costo: ");
+                    double Precio = leer.decimal();
+                    System.out.println("=======================");
+                    paquete[i] = new Paquete(cod, Nombre, Descripcion, Duracion, Categoria, Precio);
+                    System.out.println(">> Paquete actualizado correctamente <<");
+                    return;
+                }
             }
+        } else {
+          System.out.println("No existen paquetes registrados");  
         }
+        
     }
     public static void eliminar_paquetes(){
-             ver_paquetes();
+        if (paqueteIndex>0) {
+           ver_paquetes();
         String palabra;
-        System.out.println("Va a eliminar un registro de paquete, ¿Está seguro?");
+        System.out.println("Va a eliminar un registro de paquete, ¿Está seguro? si/no");
         palabra = leer.cadena();
-        if (palabra.equals("Si")) {
+        if (palabra.equals("si")) {
             System.out.print("\nCodigo de paquete a eliminar: ");
             String cod = leer.cadena();
             for (int i = 0; i < paqueteIndex; i++) {
@@ -121,10 +127,14 @@ public class Operaciones {
                     return;
                 }
             }
-        } else if (palabra.equals("No")) {
+        } else if (palabra.equals("no")) {
             System.out.println(">>> Volviendo al menu de pasajes <<<");
             return;
+        } 
+        } else {
+           System.out.println("No existen paquetes registrados"); 
         }
+             
           
     }
     
@@ -159,45 +169,55 @@ public class Operaciones {
         }
     }
     public static void actualizar_carros(){
-        System.out.print("Ingrese el codigo de paquete a actualizar: ");
-        String cod = leer.cadena();
-        for (int i = 0; i < carrosIndex; i++) {
-            if (carros[i].getNum().equals(cod)) {
-                System.out.println("=======================");
-                System.out.print("(Familiar, Mini van, Van, Autobus) \n");
-                System.out.print("New Tipo de carro: ");
-                String Modelo = leer.cadena();
-                System.out.print("New Capacidad: ");
-                int Capacidad = leer.entero();
-                System.out.print("New Disponible: ");
-                int Disponible = leer.entero();
-                System.out.println("=======================");
-                carros[i] = new Carros(cod, Modelo, Capacidad, Disponible);
-                System.out.println(">> carro actualizado correctamente <<");
-                return;
-            }
-        }
-    }
-    public static void eliminar_carros(){
-        ver_carros();
-        String palabra;
-        System.out.println("Va a eliminar un registro de paquete, ¿Está seguro?");
-        palabra = leer.cadena();
-        if (palabra.equals("Si")) {
-            System.out.print("\nCodigo de paquete a eliminar: ");
+        if (carrosIndex>0) {
+            System.out.print("Ingrese el codigo de paquete a actualizar: ");
             String cod = leer.cadena();
             for (int i = 0; i < carrosIndex; i++) {
                 if (carros[i].getNum().equals(cod)) {
-                    carros[i] = carros[--carrosIndex];
-                    System.out.println(">>> Pasaje eliminado con exito <<<");
+                    System.out.println("=======================");
+                    System.out.print("(Familiar, Mini van, Van, Autobus) \n");
+                    System.out.print("New Tipo de carro: ");
+                    String Modelo = leer.cadena();
+                    System.out.print("New Capacidad: ");
+                    int Capacidad = leer.entero();
+                    System.out.print("New Disponible: ");
+                    int Disponible = leer.entero();
+                    System.out.println("=======================");
+                    carros[i] = new Carros(cod, Modelo, Capacidad, Disponible);
+                    System.out.println(">> carro actualizado correctamente <<");
                     return;
                 }
-            }
-        } else if (palabra.equals("No")) {
-            System.out.println(">>> Volviendo al menu de pasajes <<<");
-            return;
+            }            
+        } else {
+            System.out.println("No existen carros registrados");
         }
-
+        
+    }
+    public static void eliminar_carros(){
+        if (carrosIndex>0) {
+            ver_carros();
+            String palabra;
+            System.out.println("Va a eliminar un registro de paquete, ¿Está seguro? si/no");
+            palabra = leer.cadena();
+            if (palabra.equals("si")) {
+                System.out.print("\nCodigo de paquete a eliminar: ");
+                String cod = leer.cadena();
+                for (int i = 0; i < carrosIndex; i++) {
+                    if (carros[i].getNum().equals(cod)) {
+                        carros[i] = carros[--carrosIndex];
+                        System.out.println(">>> Pasaje eliminado con exito <<<");
+                        return;
+                    }
+                }
+            } else if (palabra.equals("no")) {
+                System.out.println(">>> Volviendo al menu de pasajes <<<");
+                return;
+            }
+   
+        } else {
+            System.out.println("No existen carros registrados");
+        }
+        
     }
 
     public static void crear_reservas(){
@@ -276,24 +296,29 @@ public class Operaciones {
     }
 
     public static void eliminar_reservas(){
-        ver_reservas();
-        String palabra;
-        System.out.println("Va a eliminar un registro de reserva, ¿Está seguro?");
-        palabra = leer.cadena();
-        if (palabra.equals("Si")) {
-            System.out.print("\nDni de usuario para eliminar reserva: ");
-            String cod = leer.cadena();
-            for (int i = 0; i < reservaIndex; i++) {
-                if (reserva[i].getDni().equals(cod)) {
-                    reserva[i] = reserva[--reservaIndex];
-                    System.out.println(">>> reserva eliminada con exito <<<");
-                    return;
+        if (reservaIndex>0) {
+            ver_reservas();
+            String palabra;
+            System.out.println("Va a eliminar un registro de reserva, ¿Está seguro? si/no");
+            palabra = leer.cadena();
+            if (palabra.equals("si")) {
+                System.out.print("\nDni de usuario para eliminar reserva: ");
+                String cod = leer.cadena();
+                for (int i = 0; i < reservaIndex; i++) {
+                    if (reserva[i].getDni().equals(cod)) {
+                        reserva[i] = reserva[--reservaIndex];
+                        System.out.println(">>> reserva eliminada con exito <<<");
+                        return;
+                    }
                 }
-            }
-        } else if (palabra.equals("No")) {
-            System.out.println(">>> Volviendo al menu de pasajes <<<");
-            return;
+            } else if (palabra.equals("no")) {
+                System.out.println(">>> Volviendo al menu de pasajes <<<");
+                return;
+            }            
+        } else {
+           System.out.println("No existen reservas registradas"); 
         }
+        
 
     }
     

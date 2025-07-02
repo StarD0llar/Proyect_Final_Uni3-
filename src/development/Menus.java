@@ -85,7 +85,5 @@ public class Menus {
         System.out.print("| Opcion: ");
         
     }
-    public static void main(String[] args) {
-        reservas();
-    }
+
 }

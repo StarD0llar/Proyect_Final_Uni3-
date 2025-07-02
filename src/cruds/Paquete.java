@@ -41,12 +41,14 @@ public class Paquete {
 public String toString() {
     return String.format(
             "----------------------- PAQUETE -------------------%n"
+          + "| Num: %-43s |%n"
           + "| Nombre: %-40s |%n"
           + "| Descripcion: %-37s |%n"
           + "| Duracion: %-38s |%n"
           + "| Categoria: %-36s |%n"
           + "| Precio: $%-37.2f |%n"                    
           + "--------------------------------------------------",
+            getNum(),
             getNombre(), 
             getDescripcion(), 
             getDuracion(), 
