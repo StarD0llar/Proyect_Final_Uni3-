@@ -73,17 +73,5 @@ public class Menus {
         System.out.println("| Elija una opcion [1-4]   |");
         System.out.print("| Opcion: ");
     }
-        public static void boleta(){
-        System.out.println();
-        System.out.println(".-=-=-=-=-=-=-=-=-=-=-=-=-=-.");
-        System.out.println("|         BOLETA           |");
-        System.out.println(":---------------------------:");
-        System.out.println("| 1. Simple                |");
-        System.out.println("| 2. Factura               |");
-        System.out.println("'-=-=-=-=-=-=-=-=-=-=-=-=-=-'");
-        System.out.println("| Elija una opcion [1-2]   |");
-        System.out.print("| Opcion: ");
-        
-    }
 
 }
