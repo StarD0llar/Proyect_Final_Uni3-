@@ -53,18 +53,21 @@ public class Operaciones {
         for (int i = 0; i < n; i++) {
             System.out.println("=======================");
             System.out.println("\nPaquete "+(i+1));
-            System.out.print(" Codigo de Paquete:  ");
+            System.out.print("Codigo de Paquete:  ");
             String Num = leer.cadena();
-            System.out.print(" Destino: ");
+            System.out.print("Destino: ");
             String Nombre = leer.cadena();
-            System.out.print(" Descripcion: ");
+            System.out.print("Descripcion: ");
             String Descripcion = leer.cadena();
-            System.out.print(" Categoria (Economico,Premiun,Vip) \n");
-            System.out.print(" Categoria: ");
-            String Categoria = leer.cadena();
-            System.out.print(" Duracion: ");
+            String Categoria;
+            do {
+                System.out.print("Categoria (Economico,Premiun,Vip) \n");
+                System.out.print("New Categoria: ");
+                Categoria = leer.cadena().toLowerCase();
+            } while (!Categoria.equals("economico") && !Categoria.equals("premiun") && !Categoria.equals("vip"));
+            System.out.print("Duracion: ");
             String Duracion = leer.cadena();
-            System.out.print(" Costo: ");
+            System.out.print("Costo: ");
             double Precio = leer.decimal();
             System.out.println("=======================");
             
@@ -89,16 +92,19 @@ public class Operaciones {
             for (int i = 0; i < paqueteIndex; i++) {
                 if (paquete[i].getNum().equals(cod)) {
                     System.out.println("=======================");
-                    System.out.print(" New Destino: ");
+                    System.out.print("New Destino: ");
                     String Nombre = leer.cadena();
-                    System.out.print(" New Descripcion: ");
+                    System.out.print("New Descripcion: ");
                     String Descripcion = leer.cadena();
-                    System.out.print(" Categoria (Economico,Premiun,Vip) \n");
-                    System.out.print(" New Categoria: ");
-                    String Categoria = leer.cadena();
-                    System.out.print(" New Duracion: ");
+                    String Categoria;
+                    do {                        
+                    System.out.print("Categoria (Economico,Premiun,Vip) \n");
+                    System.out.print("New Categoria: ");
+                    Categoria = leer.cadena().toLowerCase() ; 
+                    } while (!Categoria.equals("economico")&&!Categoria.equals("premiun")&&!Categoria.equals("vip"));
+                    System.out.print("New Duracion: ");
                     String Duracion = leer.cadena();
-                    System.out.print(" New Costo: ");
+                    System.out.print("New Costo: ");
                     double Precio = leer.decimal();
                     System.out.println("=======================");
                     paquete[i] = new Paquete(cod, Nombre, Descripcion, Duracion, Categoria, Precio);
@@ -115,22 +121,28 @@ public class Operaciones {
         if (paqueteIndex>0) {
            ver_paquetes();
         String palabra;
-        System.out.println("Va a eliminar un registro de paquete, ¿Está seguro? si/no");
-        palabra = leer.cadena();
-        if (palabra.equals("si")) {
-            System.out.print("\nCodigo de paquete a eliminar: ");
-            String cod = leer.cadena();
-            for (int i = 0; i < paqueteIndex; i++) {
-                if (paquete[i].getNum().equals(cod)) {
-                    paquete[i] = paquete[--paqueteIndex];
-                    System.out.println(">>> Pasaje eliminado con exito <<<");
+            do {                
+                System.out.println("Va a eliminar un registro de paquete, ¿Está seguro? si/no");
+                palabra = leer.cadena();
+                if (palabra.equals("si")) {
+                    System.out.print("\nCodigo de paquete a eliminar: ");
+                    String cod = leer.cadena();
+                    for (int i = 0; i < paqueteIndex; i++) {
+                        if (paquete[i].getNum().equals(cod)) {
+                            paquete[i] = paquete[--paqueteIndex];
+                            System.out.println(">>> Pasaje eliminado con exito <<<");
+                            return;
+                        }
+                    }
+                } else if (palabra.equals("no")) {
+                    System.out.println(">>> Volviendo al menu de pasajes <<<");
                     return;
+                }        
+                if (!palabra.equals("si")&& !palabra.equals("no")) {
+                    System.out.println("solo si/no");
                 }
-            }
-        } else if (palabra.equals("no")) {
-            System.out.println(">>> Volviendo al menu de pasajes <<<");
-            return;
-        } 
+            } while (!palabra.equals("si")&& !palabra.equals("no"));
+        
         } else {
            System.out.println("No existen paquetes registrados"); 
         }
@@ -145,12 +157,12 @@ public class Operaciones {
         for (int i = 0; i < n; i++) {
             System.out.println("=======================");
             System.out.println("\nCarro "+(i+1));
-            System.out.print(" Codigo de carro:  ");
+            System.out.print("Codigo de carro:  ");
             String Num = leer.cadena();
             String Modelo;
             do {                
                 System.out.print("(Familiar, Mini van, Van, Autobus) \n");
-                System.out.print(" Tipo de carro: ");  
+                System.out.print("Tipo de carro: ");  
                 Modelo = leer.cadena().toLowerCase();
             } while (!Modelo.equals("familiar")&& !Modelo.equals("mini van")&& !Modelo.equals("van") && !Modelo.equals("autobus"));
             System.out.print("Capacidad: ");
@@ -179,9 +191,12 @@ public class Operaciones {
             for (int i = 0; i < carrosIndex; i++) {
                 if (carros[i].getNum().equals(cod)) {
                     System.out.println("=======================");
-                    System.out.print("(Familiar, Mini van, Van, Autobus) \n");
-                    System.out.print("New Tipo de carro: ");
-                    String Modelo = leer.cadena();
+                    String Modelo;
+                    do {
+                        System.out.print("(Familiar, Mini van, Van, Autobus) \n");
+                        System.out.print("New Tipo de carro: ");
+                        Modelo = leer.cadena().toLowerCase();
+                    } while (!Modelo.equals("familiar") && !Modelo.equals("mini van") && !Modelo.equals("van") && !Modelo.equals("autobus"));
                     System.out.print("New Capacidad: ");
                     int Capacidad = leer.entero();
                     System.out.print("New Disponible: ");
@@ -201,9 +216,11 @@ public class Operaciones {
         if (carrosIndex>0) {
             ver_carros();
             String palabra;
-            System.out.println("Va a eliminar un registro de paquete, ¿Está seguro? si/no");
-            palabra = leer.cadena();
-            if (palabra.equals("si")) {
+            
+            do {    
+                System.out.println("Va a eliminar un registro de paquete, ¿Está seguro? si/no");
+                palabra = leer.cadena();  
+              if (palabra.equals("si")) {
                 System.out.print("\nCodigo de paquete a eliminar: ");
                 String cod = leer.cadena();
                 for (int i = 0; i < carrosIndex; i++) {
@@ -216,10 +233,12 @@ public class Operaciones {
             } else if (palabra.equals("no")) {
                 System.out.println(">>> Volviendo al menu de pasajes <<<");
                 return;
-            }else {
-                System.out.println("No entendi lo que querias decir");
-                return;
-            }
+            }  
+                if (!palabra.equals("si")&& !palabra.equals("no")) {
+                    System.out.println("solo si/no");
+                }
+            } while (!palabra.equals("si")&& !palabra.equals("no"));
+            
    
         } else {
             System.out.println("No existen carros registrados");
@@ -308,22 +327,28 @@ public class Operaciones {
         if (reservaIndex>0) {
             ver_reservas();
             String palabra;
-            System.out.println("Va a eliminar un registro de reserva, ¿Está seguro? si/no");
-            palabra = leer.cadena();
-            if (palabra.equals("si")) {
-                System.out.print("\nDni de usuario para eliminar reserva: ");
-                String cod = leer.cadena();
-                for (int i = 0; i < reservaIndex; i++) {
-                    if (reserva[i].getDni().equals(cod)) {
-                        reserva[i] = reserva[--reservaIndex];
-                        System.out.println(">>> reserva eliminada con exito <<<");
-                        return;
+            do {                
+                System.out.println("Va a eliminar un registro de reserva, ¿Está seguro? si/no");
+                palabra = leer.cadena();
+                if (palabra.equals("si")) {
+                    System.out.print("\nDni de usuario para eliminar reserva: ");
+                    String cod = leer.cadena();
+                    for (int i = 0; i < reservaIndex; i++) {
+                        if (reserva[i].getDni().equals(cod)) {
+                            reserva[i] = reserva[--reservaIndex];
+                            System.out.println(">>> reserva eliminada con exito <<<");
+                            return;
+                        }
                     }
+                } else if (palabra.equals("no")) {
+                    System.out.println(">>> Volviendo al menu de pasajes <<<");
+                    return;
+                }        
+                if (!palabra.equals("si")&& !palabra.equals("no")) {
+                    System.out.println("solo si/no");
                 }
-            } else if (palabra.equals("no")) {
-                System.out.println(">>> Volviendo al menu de pasajes <<<");
-                return;
-            }            
+            } while (!palabra.equals("si")&& !palabra.equals("no"));
+                      
         } else {
            System.out.println("No existen reservas registradas"); 
         }
