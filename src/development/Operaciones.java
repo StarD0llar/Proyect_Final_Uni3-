@@ -251,8 +251,16 @@ public class Operaciones {
         System.out.println("Datos del cliente:");
         System.out.print("Nombre Completo:");
         String nombre = leer.cadena();
-        System.out.print("Dni:");
-        String dni= leer.cadena();
+        String dni;
+        do {
+            System.out.println("DNI: ");
+            dni = leer.cadena();
+            if (dni.length() < 8 || dni.length() == 0) {
+                System.out.println("Ingrese 8 digitos");
+            }
+
+        } while (dni.length() < 8 || dni.length() == 0);
+        
         System.out.print("Direccion:");
         String direccion= leer.cadena();
         System.out.print("Celular:");
@@ -295,6 +303,13 @@ public class Operaciones {
             System.out.println("No hay asientos disponibles");
             return;
         }
+        
+        if (personas > c.getDisponible()) {
+    System.out.println("No hay suficientes asientos disponibles. Solicita " + personas 
+        + " pero solo hay " + c.getDisponible() + " disponibles.");
+    return;
+}
+        
         reserva[reservaIndex++]=new Reserva(nombre, direccion, dni, celular, fecha, p, personas, c);
         for (int i = 1 ; i <=personas; i++) {
             c.asiento();
