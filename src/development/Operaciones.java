@@ -316,12 +316,12 @@ public class Operaciones {
         }
         System.out.println("Reserva exitosa");
         try {
-            FileWriter file = new FileWriter("Reserva.txt", true);
+            FileWriter file = new FileWriter("Casi_jalo.txt", true);
             PrintWriter escritor = new PrintWriter(file);
             escritor.println(reserva[reservaIndex - 1].toString());
             escritor.println();
             escritor.close();
-            System.out.println("< Reserva guardada en Reserva.txt >");
+            System.out.println("< Reserva guardada en casi_jalo.txt >");
 
         } catch (Exception e) {
             System.out.println("error al guardar la reserva" + e.getMessage());
