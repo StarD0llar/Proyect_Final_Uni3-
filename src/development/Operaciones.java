@@ -139,6 +139,7 @@ public class Operaciones {
     }
     
     public static void crear_carros(){
+        
         System.out.println("¿Cuantos carros va a registrar?");
         int n = leer.entero();
         for (int i = 0; i < n; i++) {
@@ -146,9 +147,12 @@ public class Operaciones {
             System.out.println("\nCarro "+(i+1));
             System.out.print(" Codigo de carro:  ");
             String Num = leer.cadena();
-            System.out.print("(Familiar, Mini van, Van, Autobus) \n");
-            System.out.print(" Tipo de carro: ");
-            String Modelo = leer.cadena();
+            String Modelo;
+            do {                
+                System.out.print("(Familiar, Mini van, Van, Autobus) \n");
+                System.out.print(" Tipo de carro: ");  
+                Modelo = leer.cadenaMinuscula();
+            } while (Modelo.equalsIgnoreCase("familiar")||Modelo.equalsIgnoreCase("mini van")||Modelo.equalsIgnoreCase("van") || Modelo.equalsIgnoreCase("autobus"));
             System.out.print("Capacidad: ");
             int Capacidad = leer.entero();
             System.out.print("Disponible: ");
@@ -212,6 +216,9 @@ public class Operaciones {
             } else if (palabra.equals("no")) {
                 System.out.println(">>> Volviendo al menu de pasajes <<<");
                 return;
+            }else {
+                System.out.println("No entendi lo que querias decir");
+                return;
             }
    
         } else {
@@ -231,6 +238,8 @@ public class Operaciones {
         String direccion= leer.cadena();
         System.out.print("Celular:");
         String celular= leer.cadena();
+        System.out.println("Fecha:");
+        String fecha = leer.cadena();
         ver_paquetes();
         System.out.print("Paquete:");
         String pnum=leer.cadena();
@@ -267,7 +276,7 @@ public class Operaciones {
             System.out.println("No hay asientos disponibles");
             return;
         }
-        reserva[reservaIndex++]=new Reserva(nombre, direccion, dni, celular, p, personas, c);
+        reserva[reservaIndex++]=new Reserva(nombre, direccion, dni, celular, fecha, p, personas, c);
         for (int i = 1 ; i <=personas; i++) {
             c.asiento();
         }
