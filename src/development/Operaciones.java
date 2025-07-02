@@ -3,6 +3,8 @@ package development;
 import cruds.Carros;
 import cruds.Paquete;
 import cruds.Reserva;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import security.Login;
 import util.Lectura;
 
@@ -200,9 +202,67 @@ public class Operaciones {
 
     public static void crear_reservas(){
         System.out.println("*** CREAR RESERVA ***");
+        System.out.println("Datos del cliente:");
+        System.out.print("Nombre Completo:");
+        String nombre = leer.cadena();
+        System.out.print("Dni:");
+        String dni= leer.cadena();
+        System.out.print("Direccion:");
+        String direccion= leer.cadena();
+        System.out.print("Celular:");
+        String celular= leer.cadena();
+        ver_paquetes();
+        System.out.print("Paquete:");
+        String pnum=leer.cadena();
+        Paquete p = null;
+        for (int i = 0; i < paqueteIndex; i++) {
+            if (paquete[i].getNum().equals(pnum)) {
+                p = paquete[i];
+                break;
+            }
+        }
+        if (p == null) {
+            System.out.println("Paquete no encontrado.");
+            return;
+        }
+        System.out.print("Cuantas Personas:");
+        int personas=leer.entero();
         
+        ver_carros();
+        System.out.print("Carro:");
+        String cnum = leer.cadena();
+        Carros c = null;
+        for (int i = 0; i < carrosIndex; i++) {
+            if (carros[i].getNum().equals(cnum)) {
+                c = carros[i];
+                break;
+            }
+        }
+        if (c == null) {
+            System.out.println("Carro no encontrado.");
+            return;
+        }
         
-        
+        if (c.getDisponible() <= 0) {
+            System.out.println("No hay asientos disponibles");
+            return;
+        }
+        reserva[reservaIndex++]=new Reserva(nombre, direccion, dni, celular, p, personas, c);
+        for (int i = 1 ; i <=personas; i++) {
+            c.asiento();
+        }
+        System.out.println("Reserva exitosa");
+        try {
+            FileWriter file = new FileWriter("Reserva.txt", true);
+            PrintWriter escritor = new PrintWriter(file);
+            escritor.println(reserva[reservaIndex - 1].toString());
+            escritor.println();
+            escritor.close();
+            System.out.println("< Reserva guardada en Reserva.txt >");
+
+        } catch (Exception e) {
+            System.out.println("error al guardar la reserva" + e.getMessage());
+        }
     }
     public static void ver_reservas(){
         

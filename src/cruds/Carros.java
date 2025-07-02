@@ -27,7 +27,11 @@ public class Carros {
     public int getDisponible() {
         return Disponible;
     }
-
+    public void asiento(){
+        if(Disponible > 0) Disponible--;
+        
+        
+    }    
     
 
     @Override
