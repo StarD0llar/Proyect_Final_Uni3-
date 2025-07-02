@@ -38,9 +38,9 @@ public class Carros {
     public String toString() {
         return String.format(
                 "+------------+------------------+----------------+----------------+%n"
-                + "| Número: %-4d | Modelo: %-10s | Capacidad: %-4d | Disponible: %-4d |%n"
+                + "| Número: %-4s | Modelo: %-10s | Capacidad: %-4d | Disponible: %-4d |%n"
                 + "+------------+------------------+----------------+----------------+",
-                Num, Modelo, Capacidad, Disponible
+                getNum(), getModelo(), getCapacidad(), getDisponible()
         );
     }
 

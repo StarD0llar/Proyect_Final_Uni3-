@@ -66,12 +66,11 @@ public class Menus {
         System.out.println("|          Reservas        |");
         System.out.println(":---------------------------:");
         System.out.println("| 1. Crear                 |");
-        System.out.println("| 2. Actualizar            |");
-        System.out.println("| 3. Ver                   |");
-        System.out.println("| 4. Cancelar              |");
-        System.out.println("| 5. Regresar              |");
+        System.out.println("| 2. Ver                   |");
+        System.out.println("| 3. Cancelar              |");
+        System.out.println("| 4. Regresar              |");
         System.out.println("'-=-=-=-=-=-=-=-=-=-=-=-=-=-'");
-        System.out.println("| Elija una opcion [1-5]   |");
+        System.out.println("| Elija una opcion [1-4]   |");
         System.out.print("| Opcion: ");
     }
         public static void boleta(){

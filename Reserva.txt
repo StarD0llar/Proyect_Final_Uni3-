@@ -1,0 +1,10 @@
+Reserva{nombre=Doriann Gonzales, direccion=UPeU, dni=61035577, celular=997693828, paquete=----------------------- PAQUETE -------------------
+| Nombre: Sauce                                    |
+| Descripcion: hermoso lugar                         |
+| Duracion: 2 dias                                 |
+| Categoria: economico                            |
+| Precio: $180.00                                |
+--------------------------------------------------, personas=3, carro=+------------+------------------+----------------+----------------+
+| Número: c001 | Modelo: mini van   | Capacidad: 8    | Disponible: 5    |
++------------+------------------+----------------+----------------+}
+

@@ -329,21 +329,18 @@ public class Operaciones {
                     crear_reservas();
                     break;
                 case 2:
-                    actualizar_paquetes();
+                    ver_reservas();
                     break;
                 case 3:
-                    ver_carros();
-                    break;
-                case 4:
                     eliminar_reservas();
                     break;
-                case 5:
+                case 4:
                     regresar();
                     break;
                 default:
                     error();
             }
-        } while (op!=5);
+        } while (op!=4);
     }
     
     public static void paquetes(){
