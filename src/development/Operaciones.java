@@ -255,11 +255,11 @@ public class Operaciones {
         do {
             System.out.println("DNI: ");
             dni = leer.cadena();
-            if (dni.length() < 8 || dni.length() == 0) {
+            if (dni.length() < 8 || dni.length() == 0 || dni.length()>8) {
                 System.out.println("Ingrese 8 digitos");
             }
 
-        } while (dni.length() < 8 || dni.length() == 0);
+        } while (dni.length() < 8 || dni.length() == 0 || dni.length()>8);
         
         System.out.print("Direccion:");
         String direccion= leer.cadena();
