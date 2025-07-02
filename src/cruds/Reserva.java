@@ -16,6 +16,10 @@ public class Reserva {
         this.carro = carro;
     }
 
+    public String getDni() {
+        return dni;
+    }
+
     @Override
     public String toString() {
         return "Reserva{" + "nombre=" + nombre + ", direccion=" + direccion + ", dni=" + dni + ", celular=" + celular + ", paquete=" + paquete + ", personas=" + personas + ", carro=" + carro + '}';

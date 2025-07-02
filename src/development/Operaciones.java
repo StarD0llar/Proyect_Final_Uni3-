@@ -265,13 +265,36 @@ public class Operaciones {
         }
     }
     public static void ver_reservas(){
-        
+        if (reservaIndex>0) {
+            System.out.println("*** Registro de las reservas ***");
+            for (int i = 0; i < reservaIndex; i++) {
+                System.out.println(reserva[i].toString());
+            }
+        } else {
+            System.out.println("No existen reservas registradas");
+        }
     }
-    public static void actualizar_reservas(){
-        
-    }
+
     public static void eliminar_reservas(){
-        
+        ver_reservas();
+        String palabra;
+        System.out.println("Va a eliminar un registro de reserva, ¿Está seguro?");
+        palabra = leer.cadena();
+        if (palabra.equals("Si")) {
+            System.out.print("\nDni de usuario para eliminar reserva: ");
+            String cod = leer.cadena();
+            for (int i = 0; i < reservaIndex; i++) {
+                if (reserva[i].getDni().equals(cod)) {
+                    reserva[i] = reserva[--reservaIndex];
+                    System.out.println(">>> reserva eliminada con exito <<<");
+                    return;
+                }
+            }
+        } else if (palabra.equals("No")) {
+            System.out.println(">>> Volviendo al menu de pasajes <<<");
+            return;
+        }
+
     }
     
     public static void gestion(){
