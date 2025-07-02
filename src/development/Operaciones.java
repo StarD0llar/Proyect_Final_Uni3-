@@ -151,7 +151,7 @@ public class Operaciones {
             do {                
                 System.out.print("(Familiar, Mini van, Van, Autobus) \n");
                 System.out.print(" Tipo de carro: ");  
-                Modelo = leer.cadenaMinuscula();
+                Modelo = leer.cadena().toLowerCase();
             } while (!Modelo.equals("familiar")&& !Modelo.equals("mini van")&& !Modelo.equals("van") && !Modelo.equals("autobus"));
             System.out.print("Capacidad: ");
             int Capacidad = leer.entero();
